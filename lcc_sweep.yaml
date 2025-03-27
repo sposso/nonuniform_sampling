@@ -1,0 +1,34 @@
+program: main.py
+project: breastcancer
+name: tunning_lambda_RES_1
+run_cap: 16
+
+command:
+  - ${env}
+  - echo
+  - python3
+  - ${program}
+  - ${args}
+  
+method: grid
+metric:
+  name: validation_accuracy
+  goal: maximize
+
+parameters:
+  # ADJUSTABLE PARAMETERS
+  lambd:
+    values: [0.0,0.5,1.0]
+
+  sigma:
+    values: [21,28]
+
+  res:
+    value: 2
+
+  exa:
+    value: 2
+  aug:
+    values: ["BIG","MEDIUM"]
+  batch_size:
+    value: 10

@@ -1,1 +1,3 @@
-# nonuniform_sampling
+# nonuniform-sampling
+
+ONGOING PROJECT ...

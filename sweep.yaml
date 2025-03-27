@@ -1,0 +1,28 @@
+program: main.py
+project: breastcancer
+name: uniform_sampling
+run_cap: 6
+
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+  
+method: grid
+metric:
+  name: validation_accuracy
+  goal: maximize
+
+parameters:
+  # ADJUSTABLE PARAMETERS
+  res:
+    value: [1]
+
+  pretrained_models:
+    values: [0,1]
+
+  aug:
+    values: ["SMALL", "BIG"]
+  batch_size:
+    value: 20
